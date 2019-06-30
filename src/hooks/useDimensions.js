@@ -27,8 +27,11 @@ const getDimensionObject = ({ node }) => {
   };
 };
 export const useDimensions = () => {
+  console.log("ho");
+
   const [dimensions, setDimensions] = useState({});
   const [node, setNode] = useState(null);
+
   const ref = useCallback(node => {
     setNode(node);
   }, []);
@@ -39,11 +42,10 @@ export const useDimensions = () => {
           setDimensions(screen(getDimensionObject({ node })))
         );
       measure();
-      window.addEventListener("load", measure);
+      console.log("he");
       window.addEventListener("resize", measure);
       window.addEventListener("scroll", measure);
       return () => {
-        window.removeEventListener("load", measure);
         window.removeEventListener("resize", measure);
         window.removeEventListener("scroll", measure);
       };
