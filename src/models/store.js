@@ -46,13 +46,39 @@ const roomTable = [
     applicableHolidays: [0, 1],
     bookedDates: [0, 1, 2],
     blockedDate: [3, 4]
+  },
+  {
+    id: 1,
+    name: "Basement Bedroom",
+    maxOccupancy: () =>
+      this.beds.reduce(
+        (prev, { maxOccupancy } = curr) => prev + maxOccupancy,
+        0
+      ),
+    beds: [{ id: 0, size: "queen", maxOccupancy: "2" }],
+    squareFootage: 500,
+    rate: {
+      base: 70,
+      daily: ({ date }) =>
+        this.holidays.includes(date)
+          ? (1 + holidayInterface.date.dailyIncrease) * this.base
+          : this.base,
+      weekly: ({ days, weeklyDiscount }) =>
+        this.daily * days * (1 - weeklyDiscount),
+      monthly: ({ days, monthlyDiscount }) =>
+        this.daily * days * (1 - monthlyDiscount),
+      currency: "USD"
+    },
+    applicableHolidays: [0, 1],
+    bookedDates: [0, 1, 2],
+    blockedDate: [3, 4]
   }
 ];
 const buildingTable = [
   {
     id: 0,
     name: "Silver Haus",
-    rooms: [0]
+    rooms: [0, 1]
   }
 ];
 const bookingsTable = [{ id: 0, dates: [1, 2], room: 0, guests: [0] }];
