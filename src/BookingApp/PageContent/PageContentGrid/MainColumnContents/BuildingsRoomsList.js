@@ -4,7 +4,7 @@ import Box from "@SS/design-system/src/components/layout/Box";
 import Text from "@SS/design-system/src/components/typography/Text.jsx";
 import { Header } from "@SS/design-system/src/components/typography/Header";
 import { colors } from "../../../../designSystem/colors";
-import fontStyles from "@SS/design-system/design-system/src/components/typography/fontStyles";
+import fontStyles from "@SS/design-system/src/components/typography/fontStyles";
 export const BuildingsRoomsList = ({
   buildings,
   rooms,
