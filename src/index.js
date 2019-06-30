@@ -8,7 +8,12 @@ ReactDOM.render(
   <Provider
     defaultState={defaultState}
     render={([state, setState], [ref, size]) => (
-      <BookingApp state={state} setState={setState} ref={ref} size={size} />
+      <BookingApp
+        state={state}
+        setState={setState}
+        measureRef={ref}
+        size={size}
+      />
     )}
   />,
   document.getElementById("react-root")
