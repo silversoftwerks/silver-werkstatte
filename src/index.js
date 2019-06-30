@@ -10,10 +10,12 @@ import { Header } from "@SS/design-system/src/components/typography/Header";
 import { TextInput } from "@SS/design-system/src/components/form/fillables/TextInput";
 import { Button } from "@SS/design-system/src/components/interactives/Button";
 import { store } from "./models/store";
-import Logo from "./../../website/src/components/Logo";
+import Logo from "@SS/design-system/src/components/content/Logo";
+import BillboardText from "@SS/design-system/src/components/typography/Billboard";
+import fontStyles from "@SS/design-system/src/components/typography/fontStyles";
+
 const calendarSelector = store => store;
-import BillboardText from "./../../../design-system/src/components/typography/Billboard";
-import fontStyles from "./../../../design-system/src/components/typography/fontStyles";
+
 const colors = {
   blue: "#0F4D73",
   lightBlue: "#1B758D",
