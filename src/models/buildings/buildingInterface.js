@@ -8,5 +8,6 @@ const buildingInterface = {
       (prev, { maxOccupancy } = curr) => prev + maxOccupancy,
       0
     ),
-  rooms: PropTypes.arrayOf(roomInterface).isRequired
+  rooms: PropTypes.arrayOf(roomInterface).isRequired,
+  picture: PropTypes.string.isRequired
 };

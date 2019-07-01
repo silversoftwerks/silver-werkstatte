@@ -11,11 +11,12 @@ export const Calendar = ({
   pendingBooking,
   setState,
   dateIndex,
-  dates
+  dates,
+  size
 }) => (
   <Box paddingVertical="16px" flexDirection="column">
     <Text>{selectStartDate ? "Select Start Date" : "Select End Date"}</Text>
-    <Grid columns={7} gridGap="16px">
+    <Grid columns={size.phone ? 3 : 7} gridGap="16px">
       {dates.slice(dateIndex, dateIndex + 14).map(({ label, id, ...rest }) => (
         <Column>
           <CalendarDateCard

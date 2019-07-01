@@ -30,6 +30,7 @@ export const PageContentGrid = ({
         setState={setState}
         navigation={navigation}
         control={control}
+        size={size}
       />
     </Column>
     <Column

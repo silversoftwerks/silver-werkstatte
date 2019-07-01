@@ -14,7 +14,7 @@ export const BuildingsRoomsList = ({
   pendingBooking,
   setState
 }) => (
-  <Box paddingVertical="16px">
+  <Box flexDirection="column" paddingVertical="16px">
     {buildings.map(
       ({
         name,
@@ -27,13 +27,23 @@ export const BuildingsRoomsList = ({
           .map(bedId => allBeds[bedId])
       }) => (
         <Box flexDirection="column">
-          <Box paddingVertical="16px" flexDirection="column">
+          <Box
+            padding="16px"
+            flexDirection="column"
+            backgroundImage="url(http://www.chaletmatsuzaka.com/2016/wordpress/wp-content/uploads/2015/12/Matsuzaka_Slide_11-1024x616.jpg)"
+            backgroundSize="100%"
+            backgroundPositionY="200px"
+          >
             <Box>
-              <Text {...fontStyles.sizes.xl} color={colors.blue}>
+              <Text
+                {...fontStyles.sizes.xl}
+                background="rgba(0,0,0,.6)"
+                color={colors.white}
+              >
                 {name}
               </Text>
             </Box>
-            <Text color={colors.blue}>
+            <Text color={colors.white} background="rgba(0,0,0,.6)">
               Max Guests{" "}
               {buildingBeds.reduce(
                 (prev, { maxOccupancy }) => prev + maxOccupancy,
@@ -41,10 +51,12 @@ export const BuildingsRoomsList = ({
               )}
             </Text>
             {address.split(",").map(addressLine => (
-              <Text color={colors.blue}>{addressLine}</Text>
+              <Text color={colors.white} background="rgba(0,0,0,.6)">
+                {addressLine}
+              </Text>
             ))}
           </Box>
-          <Box flexDirection="column">
+          <Box padding="16px" flexDirection="column">
             <Grid columns={1} gridGap="16px" width="100%">
               {buildingRooms.map(
                 ({
@@ -86,7 +98,7 @@ export const BuildingsRoomsList = ({
                       }))
                     }
                   >
-                    <Box flexDirection="column">
+                    <Box flexGrow="2" flexDirection="column">
                       <Text
                         color={isPendingBookingRoom ? "white" : colors.blue}
                       >
@@ -98,7 +110,7 @@ export const BuildingsRoomsList = ({
                         {maxOccupancy} Guests
                       </Text>
                     </Box>
-                    <Box alignItems="center" justifyContent="flex-end">
+                    <Box flex="1" alignItems="center" justifyContent="flex-end">
                       <Text
                         color={isPendingBookingRoom ? "white" : colors.blue}
                       >

@@ -13,10 +13,11 @@ export const MainColumnContents = ({
   setState,
   buildings,
   rooms,
-  beds
+  beds,
+  size
 }) => (
   <Fragment>
-    <CalendarHeader />
+    <CalendarHeader size={size} />
 
     <Box
       padding="16px"
@@ -29,6 +30,7 @@ export const MainColumnContents = ({
         pendingBooking={pendingBooking}
         setState={setState}
         dateIndex={dateIndex}
+        size={size}
       />
     </Box>
 
