@@ -10,6 +10,7 @@ export const CallToActionButton = ({ onClick, label, fill }) => {
       border={`2px solid ${colors.pink}`}
       outline="none"
       color={mouseDown ? colors.pink : colors.white}
+      minHeight="48px"
       mouseDown={mouseDown}
       onPointerDown={() => setMouseDown(state => true)}
       onPointerUp={() => setMouseDown(state => false)}

@@ -17,7 +17,7 @@ export const CalendarHeader = ({ size }) => (
       alignItems="center"
     >
       <Billboard flexDirection={"row"} textAlign="center" color={colors.blue}>
-        Learn{" "}
+        Live{" "}
       </Billboard>
     </Box>
 
@@ -35,7 +35,7 @@ export const CalendarHeader = ({ size }) => (
     <Box justifyContent="center" alignItems="center">
       {" "}
       <Billboard flexDirection={"row"} textAlign="center" color={colors.blue}>
-        Learn{" "}
+        Werk{" "}
       </Billboard>
     </Box>
   </Box>

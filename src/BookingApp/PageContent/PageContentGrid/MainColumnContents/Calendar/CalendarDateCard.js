@@ -2,8 +2,11 @@ import React from "react";
 import Box from "@SS/design-system/src/components/layout/Box";
 import Text from "@SS/design-system/src/components/typography/Text.jsx";
 import { colors } from "../../../../../designSystem/colors";
+import { Button } from "../../../../../designSystem/interactives/Button";
+
 export const CalendarDateCard = ({ setState, pendingBooking, id, label }) => (
-  <Box
+  <Button
+    pressedColor={colors.white}
     backgroundColor={
       [pendingBooking.startDate, pendingBooking.endDate].includes(id)
         ? colors.blue
@@ -59,15 +62,20 @@ export const CalendarDateCard = ({ setState, pendingBooking, id, label }) => (
         }
       }))
     }
-  >
-    <Text
-      color={
-        ![pendingBooking.startDate, pendingBooking.endDate].includes(id)
-          ? colors.blue
-          : colors.white
-      }
-    >
-      {label}
-    </Text>
-  </Box>
+    render={mouseDown => (
+      <Text
+        color={
+          ![pendingBooking.startDate, pendingBooking.endDate].includes(id)
+            ? mouseDown
+              ? colors.blue
+              : colors.blue
+            : mouseDown
+            ? colors.blue
+            : colors.white
+        }
+      >
+        {label}
+      </Text>
+    )}
+  />
 );

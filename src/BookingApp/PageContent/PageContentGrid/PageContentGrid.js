@@ -36,7 +36,7 @@ export const PageContentGrid = ({
     <Column
       gridColumnStart={size.phone ? 1 : size.desktop ? 4 : 3}
       gridColumnEnd={size.desktop ? 5 : 4}
-      paddingTop="112px"
+      paddingTop={size.phone ? "16px" : "112px"}
     >
       <SideColumnContents pendingBooking={pendingBooking} />
     </Column>
